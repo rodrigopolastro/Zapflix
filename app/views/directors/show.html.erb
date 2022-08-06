@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th class="col-md-3" scope="col">Nome</th>
+      <th class="col-md-3" scope="col">Registrado em</th>
+      <th class="col-md-3" scope="col">Ações</th>
+    </tr>
+  </thead>
+    <tbody>
+        <%= render @director %>
+    </tbody>
+</table>
+
+<div>
+  <%= link_to "Edit this director", edit_director_path(@director) %> |
+  <%= link_to "Back to directors", directors_path %>
+
+  <%= button_to "Destroy this director", @director, method: :delete %>
+</div>

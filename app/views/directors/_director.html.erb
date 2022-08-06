@@ -1,0 +1,11 @@
+<div id="<%= dom_id director %>"> 
+  <tr>
+    <td><%= director.name %></td>
+    <td><%= director.created_at %></td>
+    <td>
+      <%= link_to "Edit", edit_director_path(director) %> 
+      <%= button_to "Destroy this director", director, method: :delete %>
+    </td>
+    <td><%= director.id %></td>
+  </tr>
+</div>

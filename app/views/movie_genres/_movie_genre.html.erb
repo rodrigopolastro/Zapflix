@@ -1,0 +1,11 @@
+<div id="<%= dom_id movie_genre %>"> 
+  <tr>
+    <td><%= movie_genre.name %></td>
+    <td><%= movie_genre.created_at %></td>
+    <td>
+      <%= link_to "Edit", edit_movie_genre_path(movie_genre) %> 
+      <%= button_to "Destroy this movie_genre", movie_genre, method: :delete %>
+    </td>
+    <td><%= movie_genre.id %></td>
+  </tr>
+</div>

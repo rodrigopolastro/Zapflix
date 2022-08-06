@@ -1,0 +1,19 @@
+<div id="movie_genres" class="d-flex mb-5 justify-content-between">
+  <h3> Gêneros </h3>
+  <%= link_to "New movie_genre", new_movie_genre_path %>
+</div>
+  <p style="color: green"><%= notice %></p>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th class="col-md-3" scope="col">Nome</th>
+      <th class="col-md-3" scope="col">Registrado em</th>
+      <th class="col-md-3" scope="col">Ações</th>
+    </tr>
+  </thead>
+        <tbody>
+          <% @movie_genres.each do |movie_genre| %>
+              <%= render movie_genre %>
+          <% end %>
+        </tbody>
+</table>
