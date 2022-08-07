@@ -1,0 +1,60 @@
+<%= form_with(model: movie) do |form| %>
+  <% if movie.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+        <% movie.errors.each do |movie| %>
+          <li><%= movie.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<form>
+  <div class='form-group'>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class='form-group col-6'>
+    <%= form.label :cover_url, style: "display: inline-block" %>
+    <%= form.text_field :cover_url, class: "form-control" %>
+  </div>
+
+  <div class='form-group col-6'>
+    <%= form.label :published_at, style: "display: block" %>
+    <%= form.date_field :published_at, class: "form-control" %>
+  </div>
+
+  <div class='form-group col-6'>
+    <%= form.label :director_id, style: "display: block" %>
+    <%# <%= form.select :director_id, [[Director.find(1).name, 1], 2, 3], class: "form-control" %>
+    <%= form.select :director_id, 
+        Director.all.collect { |director| [director.name, director.id] },
+        class: "form-control" 
+    %>
+  </div>
+
+  <div class='form-group col-6'>
+    <%= form.label :movie_genre_id, style: "display: block" %>
+    <%= form.select :movie_genre_id, 
+        MovieGenre.all.collect { |movie_genre| [movie_genre.name, movie_genre.id] },
+        class: "form-control" 
+    %>
+  </div>
+
+  <div class='form-group'>
+    <%= form.label :sinopse, style: "display: block" %>
+    <%= form.text_field :sinopse, class: "form-control" %>
+  </div>
+
+  <div class='form-group'>
+    <%= form.label "Cast", style: "display: block" %>
+    <%= form.collection_check_boxes :artist_ids, Artist.all, :id, :name %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+</form>
+<% end %>

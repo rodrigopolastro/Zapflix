@@ -1,0 +1,21 @@
+<div id="movies" class="d-flex mb-5 justify-content-between">
+  <h3> Filmes </h3>
+  <%= link_to "New movie", new_movie_path %>
+</div>
+  <p style="color: green"><%= notice %></p>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th class="col-md-3" scope="col">Nome</th>
+      <th class="col-md-3" scope="col">Diretor</th>
+      <th class="col-md-3" scope="col">Gênero</th>
+      <th class="col-md-3" scope="col">Estreia</th>
+      <th class="col-md-3" scope="col">Ações</th>
+    </tr>
+  </thead>
+        <tbody>
+          <% @movies.each do |movie| %>
+              <%= render movie %>
+          <% end %>
+        </tbody>
+</table>
