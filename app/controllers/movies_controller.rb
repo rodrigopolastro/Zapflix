@@ -1,9 +1,9 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: %i[ show edit update destroy ]
-  
+  before_action :set_movie,  only: %i[ show edit update destroy ]
+
   # GET /movies
   def index
-    @movies = Movie.all                                                  
+    @movies = Movie.all                                                 
   end
 
   # GET /movies/new
@@ -31,7 +31,8 @@ class MoviesController < ApplicationController
 
   # PUT/PATCH /movies
   def update
-    if @movie.update(movie_params)
+     
+    if @movie.update(movie_params)     
       redirect_to movies_url, notice: "#{@movie.title} was successfully updated." 
     else
       render :new, status: :unprocessable_entity  
@@ -51,9 +52,9 @@ class MoviesController < ApplicationController
   def set_movie
     @movie = Movie.find(params[:id])
   end
-
+  
   # Only allow a list of trusted parameters through.
-  def movie_params
-    params.require(:movie).permit(:title, :published_at, :director_id, :movie_genre_id, artist_ids:[])
+  def movie_params  
+    params.require(:movie).permit(:title, :cover_url, :published_at, :director_id, :movie_genre_id, :sinopse, artist_ids:[])
   end
 end

@@ -1,46 +1,61 @@
 <div class="card mb-3 col-12 dark-gray-6">
   <div class="row g-0 rounded dark-gray-6">
-    <div class="col-md-6 mainCard">
-      <%= image_tag 'main-bg.png' %>
+    <div class="col-md-6 text-center mainCard">
+      <img src=<%=@last_movie.cover_url %>>
     </div>
-    <div class="col-md-6">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h5 class="card-title"><%= @last_movie.title %></h5>
+          <h6 class="card-title">Diretor: <%= Director.find(@last_movie.director_id).name %></h6>
+          <h6 class="card-title">Gênero: <%= MovieGenre.find(@last_movie.movie_genre_id).name %></h6>
+          <h6 class="card-title">Estreia: <%= @last_movie.published_at %></h6>
+          <br>
+          <h6 class="card-title">Elenco: <%= @last_movie.artist_ids.map { |id| Artist.find(id).name } %></h6>
+          <p class="card-text"><%= @last_movie.sinopse %></p>
+        </div>
       </div>
-    </div>
   </div>
 </div>
+
 <div class="row">
+
   <div class="col-sm-4">
     <div class="card dark-gray-6">
-      <%= image_tag 'cover1.png', class: 'card-img-top' %>
+      <img src=<%=@second_last_movie.cover_url%>>
       <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias porro amet consectetur reprehenderit possimus unde nemo quasi nisi, doloremque id nostrum enim atque, debitis quaerat itaque non quibusdam perferendis dolor.
-        </p>
+        <h5 class="card-title"><%= @second_last_movie.title %></h5>
+        <h6 class="card-title">Diretor: <%= Director.find(@second_last_movie.director_id).name %></h6>
+        <h6 class="card-title">Estreia: <%= @second_last_movie.published_at %></h6>
+        <br>
+        <p class="card-text"><%= @second_last_movie.sinopse %></p>
       </div>
     </div>
   </div>
+
   <div class="col-sm-4">
     <div class="card dark-gray-6">
-      <%= image_tag 'cover2.png', class: 'card-img-top' %>
+      <img src=<%=@third_last_movie.cover_url%>>
       <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias porro amet consectetur reprehenderit possimus unde nemo quasi nisi, doloremque id nostrum enim atque, debitis quaerat itaque non quibusdam perferendis dolor.
-        </p>
+        <h5 class="card-title"><%= @third_last_movie.title %></h5>
+        <h6 class="card-title">Diretor: <%= Director.find(@third_last_movie.director_id).name %></h6>
+        <h6 class="card-title">Estreia: <%= @third_last_movie.published_at %></h6>
+        <br>
+        <p class="card-text"><%= @third_last_movie.sinopse %></p>
       </div>
     </div>
   </div>
+
   <div class="col-sm-4">
     <div class="card dark-gray-6">
-      <%= image_tag 'cover3.png', class: 'card-img-top' %>
+      <img src=<%=@fourth_last_movie.cover_url%>>
       <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias porro amet consectetur reprehenderit possimus unde nemo quasi nisi, doloremque id nostrum enim atque, debitis quaerat itaque non quibusdam perferendis dolor.
-        </p>
+        <h5 class="card-title"><%= @fourth_last_movie.title %></h5>
+        <h6 class="card-title">Diretor: <%= Director.find(@fourth_last_movie.director_id).name %></h6>
+        <h6 class="card-title">Gênero: <%= MovieGenre.find(@fourth_last_movie.movie_genre_id).name %></h6>
+        <br>
+        <p class="card-text"><%= @fourth_last_movie.sinopse %></p>
       </div>
     </div>
   </div>
+
 </div>
