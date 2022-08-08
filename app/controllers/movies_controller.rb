@@ -23,7 +23,7 @@ class MoviesController < ApplicationController
       @movie.artist_ids.each do |artist_in_movie|
         Contract.new(movie_id: @movie.id, artist_id: artist_in_movie)
       end
-      redirect_to movies_url, notice: "#{@movie.title} was successfully created." 
+      redirect_to movies_url, notice: "O filme #{@movie.title} foi registrado." 
     else
       render :new, status: :unprocessable_entity 
     end
@@ -33,7 +33,7 @@ class MoviesController < ApplicationController
   def update
      
     if @movie.update(movie_params)     
-      redirect_to movies_url, notice: "#{@movie.title} was successfully updated." 
+      redirect_to movies_url, notice: "O filme #{@movie.title} foi atualizado." 
     else
       render :new, status: :unprocessable_entity  
     end
@@ -43,7 +43,7 @@ class MoviesController < ApplicationController
   def destroy
     @movie.destroy
 
-    redirect_to movies_url, notice: "#{@movie.title} was successfully destroyed."
+    redirect_to movies_url, notice: "O filme #{@movie.title} foi apagado."
   end
 
   private

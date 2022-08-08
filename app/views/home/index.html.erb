@@ -1,17 +1,19 @@
-<div class="card mb-3 col-12 dark-gray-6">
+
+
+<div class="card mb-3 col-12 dark-gray-6 main-card">
   <div class="row g-0 rounded dark-gray-6">
-    <div class="col-md-6 text-center mainCard">
-      <img src=<%=@last_movie.cover_url %>>
+    <div class="col-md-6 text-center card-image">
+      <img src=<%= @last_movie.cover_url %>>
     </div>
       <div class="col-md-6">
         <div class="card-body">
           <h5 class="card-title"><%= @last_movie.title %></h5>
-          <h6 class="card-title">Diretor: <%= Director.find(@last_movie.director_id).name %></h6>
-          <h6 class="card-title">Gênero: <%= MovieGenre.find(@last_movie.movie_genre_id).name %></h6>
-          <h6 class="card-title">Estreia: <%= @last_movie.published_at %></h6>
+          <h6 class="card-subtitle">Diretor: <%= Director.find(@last_movie.director_id).name %></h6>
+          <h6 class="card-subtitle">Gênero: <%= MovieGenre.find(@last_movie.movie_genre_id).name %></h6>
+          <h6 class="card-subtitle">Estreia: <%= @last_movie.published_at %></h6>
           <br>
-          <h6 class="card-title">Elenco: <%= @last_movie.artist_ids.map { |id| Artist.find(id).name } %></h6>
-          <p class="card-text"><%= @last_movie.sinopse %></p>
+          <h6 class="card-subtitle">Elenco: <%= @last_movie.artist_ids.map { |id| Artist.find(id).name } %></h6>
+          <p class="card-text main-card-sinopse"><%= @last_movie.sinopse %></p>
         </div>
       </div>
   </div>
@@ -20,42 +22,44 @@
 <div class="row">
 
   <div class="col-sm-4">
-    <div class="card dark-gray-6">
+    <div class="card dark-gray-6 small-card">
       <img src=<%=@second_last_movie.cover_url%>>
       <div class="card-body">
         <h5 class="card-title"><%= @second_last_movie.title %></h5>
-        <h6 class="card-title">Diretor: <%= Director.find(@second_last_movie.director_id).name %></h6>
-        <h6 class="card-title">Estreia: <%= @second_last_movie.published_at %></h6>
+        <h6 class="card-subtitle">Diretor: <%= Director.find(@second_last_movie.director_id).name %></h6>
+        <h6 class="card-subtitle">Estreia: <%= @second_last_movie.published_at %></h6>
         <br>
-        <p class="card-text"><%= @second_last_movie.sinopse %></p>
+        <p class="card-text card-sinopse"><%= @second_last_movie.sinopse %></p>
       </div>
     </div>
   </div>
 
   <div class="col-sm-4">
-    <div class="card dark-gray-6">
+    <div class="card dark-gray-6 small-card">
       <img src=<%=@third_last_movie.cover_url%>>
       <div class="card-body">
         <h5 class="card-title"><%= @third_last_movie.title %></h5>
-        <h6 class="card-title">Diretor: <%= Director.find(@third_last_movie.director_id).name %></h6>
-        <h6 class="card-title">Estreia: <%= @third_last_movie.published_at %></h6>
+        <h6 class="card-subtitle">Diretor: <%= Director.find(@third_last_movie.director_id).name %></h6>
+        <h6 class="card-subtitle">Estreia: <%= @third_last_movie.published_at %></h6>
         <br>
-        <p class="card-text"><%= @third_last_movie.sinopse %></p>
+        <p class="card-text card-sinopse"><%= @third_last_movie.sinopse %></p>
       </div>
     </div>
   </div>
 
   <div class="col-sm-4">
-    <div class="card dark-gray-6">
+    <div class="card dark-gray-6 small-card">
       <img src=<%=@fourth_last_movie.cover_url%>>
       <div class="card-body">
         <h5 class="card-title"><%= @fourth_last_movie.title %></h5>
-        <h6 class="card-title">Diretor: <%= Director.find(@fourth_last_movie.director_id).name %></h6>
-        <h6 class="card-title">Gênero: <%= MovieGenre.find(@fourth_last_movie.movie_genre_id).name %></h6>
+        <h6 class="card-subtitle">Diretor: <%= Director.find(@fourth_last_movie.director_id).name %></h6>
+        <h6 class="card-subtitle">Gênero: <%= MovieGenre.find(@fourth_last_movie.movie_genre_id).name %></h6>
         <br>
-        <p class="card-text"><%= @fourth_last_movie.sinopse %></p>
+        <p class="card-text card-sinopse"><%= @fourth_last_movie.sinopse %></p>
       </div>
     </div>
   </div>
 
+</div>
+  
 </div>

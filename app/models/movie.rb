@@ -9,7 +9,8 @@ class Movie < ApplicationRecord
   has_one :director
   has_one :movie_genre
 
-  has_many :contracts
+  # Contract = Join table between movies and artists
+  has_many :contracts, dependent: :destroy 
   has_many :artists, through: :contracts
 
 end

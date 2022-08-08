@@ -3,11 +3,18 @@
     <td><%= movie.title %></td>
     <td><%= Director.find(movie.director_id).name %></td>
     <td><%= MovieGenre.find(movie.movie_genre_id).name %></td>
-    <td><%= movie.published_at %></td>
+    <td><%= format_date(movie.published_at) %></td>
     <td>
-      <%= link_to "Edit", edit_movie_path(movie) %> 
-      <%= button_to "Destroy this movie", movie, method: :delete %>
+      <%= link_to image_tag('icons/editIcon.png'), edit_movie_path(movie) %>
+      <%= link_to image_tag('icons/deleteIcon.png'), movie, data: { "turbo-method": :delete } %>
     </td>
-    <td><%= movie.id %></td>
   </tr>
 </div>
+
+<%# 
+- Style index pages: new_button, edit/destroy icons
+- Style form pages: cancel/save buttons, input
+- Style movie form page: inputs
+- format dates
+- home page - hide sinopse overflow, set cards height
+ %>

@@ -20,7 +20,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.new(artist_params)
 
     if @artist.save
-      redirect_to artists_url, notice: "#{@artist.name} was successfully created." 
+      redirect_to artists_url, notice: "O artista #{@artist.name} foi registrado." 
     else
       render :new, status: :unprocessable_entity 
     end
@@ -29,7 +29,7 @@ class ArtistsController < ApplicationController
   # PUT/PATCH /artists
   def update
     if @artist.update(artist_params)
-      redirect_to artists_url, notice: "#{@artist.name} was successfully updated." 
+      redirect_to artists_url, notice: "O artista #{@artist.name} foi atualizado."
     else
       render :new, status: :unprocessable_entity  
     end
@@ -39,7 +39,7 @@ class ArtistsController < ApplicationController
   def destroy
     @artist.destroy
 
-    redirect_to artists_url, notice: "#{@artist.name} was successfully destroyed."
+    redirect_to artists_url, notice: "O artista #{@artist.name} foi apagado."
   end
 
   private

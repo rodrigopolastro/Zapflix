@@ -20,7 +20,7 @@ class MovieGenresController < ApplicationController
     @movie_genre = MovieGenre.new(movie_genre_params)
 
     if @movie_genre.save
-      redirect_to movie_genres_url, notice: "#{@movie_genre.name} was successfully created." 
+      redirect_to movie_genres_url, notice: "O gênero #{@movie_genre.name} foi registrado."  
     else
       render :new, status: :unprocessable_entity 
     end
@@ -29,7 +29,7 @@ class MovieGenresController < ApplicationController
   # PUT/PATCH /movie_genres
   def update
     if @movie_genre.update(movie_genre_params)
-      redirect_to movie_genres_url, notice: "#{@movie_genre.name} was successfully updated." 
+      redirect_to movie_genres_url, notice: "O gênero #{@movie_genre.name} foi atualizado." 
     else
       render :new, status: :unprocessable_entity  
     end
@@ -39,7 +39,7 @@ class MovieGenresController < ApplicationController
   def destroy
     @movie_genre.destroy
 
-    redirect_to movie_genres_url, notice: "#{@movie_genre.name} was successfully destroyed."
+    redirect_to movie_genres_url, notice: "O gênero #{@movie_genre.name} foi apagado."
   end
 
   private

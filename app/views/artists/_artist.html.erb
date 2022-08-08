@@ -1,11 +1,10 @@
 <div id="<%= dom_id artist %>"> 
   <tr>
     <td><%= artist.name %></td>
-    <td><%= artist.created_at %></td>
+    <td><%= format_date(artist.created_at) %></td>
     <td>
-      <%= link_to "Edit", edit_artist_path(artist) %> 
-      <%= button_to "Destroy this artist", artist, method: :delete %>
+      <%= link_to image_tag('icons/editIcon.png'), edit_artist_path(artist) %>
+      <%= link_to image_tag('icons/deleteIcon.png'), artist, data: { "turbo-method": :delete } %>
     </td>
-    <td><%= artist.id %></td>
   </tr>
 </div>

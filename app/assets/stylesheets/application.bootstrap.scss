@@ -38,13 +38,18 @@ main {
   margin: 0;
 }
 
-.mainCard img {
-  max-width: 100%;
-  height: auto;
-  position: relative;
+.main-card{
+  height: 60vh;
 }
 
-.mainCard img::after {
+.card-image img {
+  width: auto;
+  height: 60vh;
+  position: relative;
+  background-color: #48484A;
+}
+
+.card-image img::after {
   content: "";
   top: 0;
   right: 0;
@@ -52,6 +57,32 @@ main {
   height: 100%;
   position: absolute;
   background: linear-gradient(270deg, #1C1C1E 50.52%, rgba(28, 28, 30, 0) 100%);
+}
+
+.card-title{
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.main-card-sinopse{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.small-card{
+  height: 60vh;
+}
+
+.small-card img{
+  object-fit: cover;
+
+  max-height: 25vh;
+  width: 100%;
+}
+
+.card-subtitle{
+  text-align: left;
 }
 
 h6 {
@@ -73,9 +104,17 @@ form .form-group>input:focus {
 form .form-group>input,
 form .form-group>textarea,
 form .form-group>select,
-form .list-group-item {
+form .list-group-item, 
+.label-checkbox {
   color: #636366;
   border: 1px solid #636366;
+  background: none;
+}
+
+.card-sinopse{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 form .form-check-input:checked {
@@ -143,3 +182,31 @@ td img {
 .light-gray-3 {
   background-color: #C7C7CC !important;
 }
+
+.btn-white{
+  color: #2C2C2E !important;
+  background-color: white !important;
+}
+
+.btn-pink{
+  color: #F2F2F7 !important;
+  background-color: #FF375F !important;
+}
+
+form .form-group>select{
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+}
+
+.sinopse-field{
+  height: 5rem;
+}
+
+.label-checkbox{
+  padding: 0.3rem;
+  border-radius: 0.375rem;
+  width: 10rem;
+  text-align: center;
+}
+

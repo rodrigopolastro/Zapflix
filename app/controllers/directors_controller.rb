@@ -20,7 +20,7 @@ class DirectorsController < ApplicationController
     @director = Director.new(director_params)
 
     if @director.save
-      redirect_to directors_url, notice: "#{@director.name} was successfully created." 
+      redirect_to directors_url, notice: "O diretor #{@director.name} foi registrado." 
     else
       render :new, status: :unprocessable_entity 
     end
@@ -29,7 +29,7 @@ class DirectorsController < ApplicationController
   # PUT/PATCH /directors
   def update
     if @director.update(director_params)
-      redirect_to directors_url, notice: "#{@director.name} was successfully updated." 
+      redirect_to directors_url, notice: "O diretor #{@director.name} foi atualizado." 
     else
       render :new, status: :unprocessable_entity  
     end
@@ -39,7 +39,7 @@ class DirectorsController < ApplicationController
   def destroy
     @director.destroy
 
-    redirect_to directors_url, notice: "#{@director.name} was successfully destroyed."
+    redirect_to directors_url, notice: "O diretor #{@director.name} foi apagado." 
   end
 
   private

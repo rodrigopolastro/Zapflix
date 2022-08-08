@@ -1,11 +1,10 @@
 <div id="<%= dom_id movie_genre %>"> 
   <tr>
     <td><%= movie_genre.name %></td>
-    <td><%= movie_genre.created_at %></td>
+    <td><%= format_date(movie_genre.created_at) %></td>
     <td>
-      <%= link_to "Edit", edit_movie_genre_path(movie_genre) %> 
-      <%= button_to "Destroy this movie_genre", movie_genre, method: :delete %>
+      <%= link_to image_tag('icons/editIcon.png'), edit_movie_genre_path(movie_genre) %>
+      <%= link_to image_tag('icons/deleteIcon.png'), movie_genre, data: { "turbo-method": :delete } %>
     </td>
-    <td><%= movie_genre.id %></td>
   </tr>
 </div>
